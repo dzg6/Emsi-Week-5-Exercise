@@ -8,10 +8,13 @@ a:hover, a:active {
     text-decoration: underline;
 }
 
-#header{
+#header, #footer{
     font: 13px/27px Roboto,RobotoDraft,Arial,sans-serif;
     display: flex;
 
+}
+#footer{
+    background-color: #f2f2f2;
 }
 svg{
     color: #5f6368;
@@ -20,11 +23,18 @@ svg{
     width:48px;
     height:48px;
 }
-
-#right-menu{
-    display: inline-block;
+#logo, #search-bar{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
-#left-menu{
+
+
+.right-align{
+    display: inline-block;
+    float:right;
+}
+.left-align{
     display: inline-block;
 }
 
@@ -34,7 +44,7 @@ svg{
 }
 
 a {
-    display: inline-block;
+    /* display: inline-block; */
 outline: none;
 vertical-align: middle;
 -moz-border-radius: 2px;
