@@ -1,0 +1,49 @@
+body, input, button {
+font-size: 14px;
+font-family: arial,sans-serif;
+color: #222;
+}
+
+a:hover, a:active {
+    text-decoration: underline;
+}
+
+#header{
+    font: 13px/27px Roboto,RobotoDraft,Arial,sans-serif;
+    display: flex;
+
+}
+svg{
+    color: #5f6368;
+    opacity: 1;
+    fill: currentColor;
+    width:48px;
+    height:48px;
+}
+
+#right-menu{
+    display: inline-block;
+}
+#left-menu{
+    display: inline-block;
+}
+
+
+.link-position{
+    display: inline-block;
+}
+
+a {
+    display: inline-block;
+outline: none;
+vertical-align: middle;
+-moz-border-radius: 2px;
+border-radius: 2px;
+-moz-box-sizing: border-box;
+box-sizing: border-box;
+height: 40px;
+width: 40px;
+color: #000;
+cursor: pointer;
+text-decoration: none;
+}
