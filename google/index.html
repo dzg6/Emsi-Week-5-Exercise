@@ -1,85 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8">
     <title>Mark's Google</title>
     <meta name="description" content="Marks Google." />
     <link rel="stylesheet" type="text/css" href="main.css" media="screen" />
-
 </head>
-    <body>
-        <div id="header-bar">
-            <div class="left-align">
-                <a href="#">
-                    About
-                </a>
-                <a href="#">
-                    Store
-                </a>
-            </div>
-            <div class="right-align">
-                <a href="#">
-                    Gmail
-                </a>
-                <a href="#">
-                    Images
-                </a>
-                <div class="link-position">
-                                <a class="inner-text" href="#">
-                                    <svg focusable="false" viewBox="0 0 24 24"><path d="M6,8c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM12,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM6,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM6,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM12,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM16,6c0,1.1 0.9,2 2,2s2,-0.9 2,-2 -0.9,-2 -2,-2 -2,0.9 -2,2zM12,8c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM18,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM18,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2z"></path></svg>
-                                </a>
-                </div>
+<body>
+    <div id="main">
 
-                <a href="#">
-                    <img src="imgs/profile-logo.png" />
-                </a>
+        <div class="header">
+            <a class="first"> About </a>
+            <a> Store </a>
+            <div class="right">
+                <div class="accounts">
+                    <a> Gmail </a>
+                    <a> Images </a>
+                        <div class="apps">
+                            <a>
+                                <svg focusable="false" viewBox="0 0 24 24"><path d="M6,8c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM12,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM6,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM6,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM12,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM16,6c0,1.1 0.9,2 2,2s2,-0.9 2,-2 -0.9,-2 -2,-2 -2,0.9 -2,2zM12,8c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM18,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM18,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2z"></path></svg>
+                            </a>
+                        </div>
+                        <a>
+                            <img src="imgs/profile-logo.png" />
+                        </a>
+                </div>
             </div>
         </div>
-        <div id="logo">
-                <img src="imgs/googlelogo_color.png" />
+
+        <div class="logo">
+            <img src="imgs/googlelogo_color.png" />
         </div>
-        <div id="search-bar">
-            <div>
-                <span><svg focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path></svg></span>
-                <input />
+        
+        <div class="search container">
+            <form>
+            <div class="bar">
+                <div class="search-icon">
+                    <span><svg focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"> <path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path></svg></span>
+                </div>
+                <div class="input">
+                    <input />
+                </div>
             </div>
-            <div>
+            <div class="buttons"><div>
                 <button type="submit">Google Search</button>
                 <button>I'm Feeling Lucky</button>
             </div>
+            </div>
+        </form>
         </div>
-            
-        <div id="footer">
-            <div class="left-align">
-                <a href=#>
-                    Advertising
-                </a>
-                <a href=#>
-                    Business
-                </a>
-                <a href=#>
-                    How Search Works
-                </a>
-            </div>
-            <div id="motto">
-                <a href="#">
-                    <img src="imgs/carbon.png" />
-                    <span>Carbon neutral since 2007</span>
-                </a>
-            </div>
-            <div class="right-align">
-                <a href="#">
-                    Privacy
-                </a>
-                <a href="#">
-                    Terms
-                </a>
-                <a href="#">
-                    Settings
-                </a>
-            </div>
-        </div>
-    </body>
 
+        <div class="promo">
+            <div>
+            <a>This is a fake Google page #MarkReynolds</a>
+        </div>
+        </div>
+
+        <div class="footer">
+            <div class="left">
+                <a>Advertising</a>
+                <a >Business</a>
+                <a>How Search works</a>
+            </div>
+            <div class="center">
+                <a>
+                    <img src="imgs/carbon.png" />
+                    <span> Carbon neutral since 2007</span>
+                </a>
+            </div>
+            <div class="right">
+                <a>Privacy</a>
+                <a>Terms</a>
+                <a>Settings</a>
+            </div>
+        </div>
+    </div> <!-- #main -->
+</body>
 </html>
