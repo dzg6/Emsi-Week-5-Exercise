@@ -1,3 +1,5 @@
+
+/* Imports */
 @font-face {
     font-family: 'Cera Pro';
     src: url('fonts/cera pro/Cera Pro Medium.otf'), url('fonts/cera pro/Cera Pro Medium.ttf') format('truetype');
@@ -17,34 +19,90 @@
     font-style: normal;
 }
 
-
+/* banner and hulk var style switch
+    aka Night and Day style switch */
 html{
     --main-color: #FFF;
     --main-color-light: #fafbfc;
     --secondary-color: #4c7099;
     --main-text: #6a6d75;
-    --btn-a: #f26226;
-    --btn-a-hover:  #e7581d;
-    --btn-b: #2e62af;
-    --btn-b-hover:  #0f346c;
-    --a-link: #6a6d75;
-    --a-link-hover: #0f346c;
+    --desc-text: #303236;
+    --h2: #303236;
+    --h3: #303236;
+    --highlight-text: #fff;
+    --btn-video: #f26226;
+    --btn-video-hover:  #e7581d;
+    --btn-choose: #2e62af;
+    --btn-choose-hover:  #0f346c;
+    --choose-hover-text: #fff;
+    --a-header: #6a6d75;
+    --a-header-hover: #0f346c;
+    --a-footer: #a1bce6;
+    --a-footer-hover: #a1bce6;
+    --social-icons: url(content/imgs/social-icons.png);
+    --hulk: url(content/imgs/go-green.png);
+    --hulk-color: #0f6c1f; 
+    --hulk-color-hover: #f52213; 
+    --hulk-animation:banner 1s;
+    --hulk-btn:none;
 }
 
-html[data-theme="night"] {
+html[data-theme="hulk"] {
     --main-color: #4c9950;
-    --main-color-light: #75d179;
+    --main-color-light: #82b885;
     --secondary-color: #0f6c1f; 
-    --main-text: #cbd4ec;
-    --btn-a: #7e26f2;
-    --btn-a-hover:  #611bbd;
-    --btn-b: #2e62af;
-    --btn-b-hover:  #4c7099;
-    --a-link:#cbd4ec;
-    --a-link-hover: #4c7099;
+    --main-text: #b6caff;
+    --desc-text: #7e430c;
+    --h2: #f26226;
+    --h3: #f26226;
+    --highlight-text: #f26226;
+    --btn-video: #7e26f2;
+    --btn-video-hover:  #611bbd;
+    --btn-choose: #7e26f2;
+    --btn-choose-hover:  #611bbd;
+    --choose-hover-text: #f26226;
+    --a-header:#cbd4ec;
+    --a-header-hover: #f26226;
+    --a-footer:#cbd4ec;
+    --a-footer-hover: #f26226;
+    --social-icons: url(content/imgs/social-icons-green.png);
+    --hulk: url(content/imgs/go-blue.png);
+    --hulk-color: #2e62af;
+    --hulk-color-hover: #8fb4ec;
+    --hulk-animation:hulk 3s;
+    --hulk-btn: hulk-shake .5s;
+}
+
+/* Hulk Animations */
+@keyframes hulk-shake {
+    0% { transform: translate3d(0px, 0, 0);}
+    50% {   transform: translate3d(-10px, 0, 0);
+            color: #82b885;}
+    100% {  transform: translate3d(0px, 0, 0);
+            color:#f26226;}
+  }
+  @keyframes hulk {
+    0%   {background-color: #4c9950;}
+    50%  {background-color: #47108f;}
+    100% {background-color: #4c9950;}
+  }
+  @keyframes banner {
+    from {background-color: #FFF;}
+    to {background-color: #FFF;}
+  }
+  /* Used a snippet to learn css animations from
+  This shake credit goes to: 
+  https://css-tricks.com/snippets/css/shake-css-keyframe-animation/
+   */
+  @keyframes shake {
+  10%, 90% {transform: translate3d(-1px, 0, 0);}
+  20%, 80% {transform: translate3d(2px, 0, 0);}
+  30%, 50%, 70% {transform: translate3d(-4px, 0, 0);}
+  40%, 60% {transform: translate3d(4px, 0, 0);}
 }
 
 
+/* The main CSS */
 
 html, body{
     height:100%;
@@ -53,8 +111,9 @@ html, body{
     padding: 0;
     font-size: 14px;
     font-family: 'Cera Pro', sans-serif;
-    color: #222;
+    color: #eaf1fa;
     background-color: var(--main-color)
+
 }
 #main{
     height: 100%;
@@ -78,6 +137,10 @@ html, body{
 a{
     cursor: pointer;
 }
+a:hover{
+    animation: var(--hulk-btn);
+    animation-iteration-count: 1;
+}
 
 /* Fixed Header bar */
 
@@ -90,8 +153,10 @@ header{
     padding: 10px 20px;
     z-index: 999;
     font-family: 'Cera Pro', sans-serif;
-    background-color: var(--main-color);
+    /* background-color: var(--main-color); */
     box-shadow: 0 1px 0 rgba(0,0,0,0.08);
+    animation: var(--hulk-animation);
+    animation-iteration-count: infinite;
 }
 .header-bar{
     display: flex;
@@ -110,6 +175,33 @@ header{
 .logo{
     width: 94px;
     height: 43px;
+}
+.hulk-btn button {
+    margin-left: 10px;
+    padding-left: 35px;
+    padding-bottom: 42px;
+    background-image: var(--hulk);
+    background-color: var(--hulk-color);
+    background-size: contain;
+    border-radius: 25px;
+    cursor: pointer;
+    vertical-align: text-bottom;
+
+}
+.hulk-btn{
+    animation: shake 1s;
+    animation-iteration-count: 1;
+}
+.hulk-btn button:hover {
+    background-color: var(--hulk-color-hover);
+
+}
+.hulk-btn button:focus {
+    animation-play-state: running;
+    animation: shake 1s;
+    animation-iteration-count: 1;
+    outline: none;
+
 }
 .header-bar ul {
     display: flex;
@@ -137,7 +229,7 @@ header{
     outline: none;
 }
 .header-bar a:hover {
-    color: var(--secondary-color);
+    color: var(--a-header-hover);
     text-decoration: none;
 }
 #log-in   {
@@ -149,11 +241,11 @@ header{
     text-transform: uppercase;
 }
 #sign-up {
-    background-color: var(--btn-a);
-    border-color: var(--btn-a);
+    background-color: var(--btn-video);
+    border-color: var(--btn-video);
     padding: 0 20px;
     border-radius: 2px;
-    color: var(--main-color);
+    color: var(--highlight-text);
     -moz-user-select: -moz-none;
     -ms-user-select: none;
     -webkit-user-select: none;
@@ -163,8 +255,8 @@ header{
     text-decoration: none;
 }
 #sign-up:hover {
-    background-color: var(--a-link-hover);
-    border-color: var(--a-link-hover);
+    background-color: var(--btn-video-hover);
+    border-color: var(--btn-video-hover);
 }
 
 
@@ -204,14 +296,15 @@ header{
     line-height: 55px;
     letter-spacing: 0.1em;
     text-align: center;
-    background-color: var(--btn-a);
-    border-color: var(--btn-a);
-    color: #FFF;
+    background-color: var(--btn-video);
+    border-color: var(--btn-video);
+    color: var(--highlight-text);
     text-transform: uppercase;
     }
 .video-text a:hover {
-    background-color: var(--a-link-hover);
-    border-color: var(--a-link-hover);
+    background-color: var(--btn-video-hover);
+    border-color: var(--btn-video-hover);
+    color:var(--highlight-text);
 }
 .video-text h1 {
     max-width: 520px;
@@ -260,7 +353,7 @@ header{
     margin-top: 15px;
     font-size: 30px;
     line-height: normal;
-    color: #303236;
+    color: var(--h2);
 }
 
 
@@ -287,6 +380,7 @@ header{
     font-size: 20px;
     text-align: center;
     text-transform: uppercase;
+    color: var(--h3);
 }
 .table{
     display: flex;
@@ -312,6 +406,7 @@ header{
     margin-bottom: 9px;
     font-size: 20px;
     line-height: 30px;
+    color: var(--h3);
 }
 .choose-plan {
     display: block;
@@ -324,12 +419,13 @@ header{
     line-height: 55px;
     border-radius: 50px;
     text-transform: uppercase;
-    background-color: #2e62af;
+    background-color: var(--btn-choose);
     color: #FFF;
 }
 .choose-plan:hover {
     text-decoration: none;
-    background-color: var(--secondary-color);
+    background-color: var(--btn-choose-hover);
+    color:var(--choose-hover-text)
 }
 
 /* Last Promo */
@@ -351,7 +447,7 @@ header{
     margin-top: 15px;
     font-size: 30px;
     line-height: normal;
-    color: #303236;
+    color: var(--h2)
 }
 .last-promo .desc-text {
     font-size: 18px;
@@ -362,6 +458,9 @@ header{
 footer {
     background-color: var(--main-color-light);
     box-shadow: inset 0 1px 0 0 #eceef2;
+}
+footer .desc-text{
+    color:var(--desc-text);
 }
 .footer-top {
     display: flex;
@@ -402,7 +501,7 @@ footer .column {
     text-indent: -20000px;
 }
 .footer-top h3 {
-    color: #303236;
+    color: var(--h3);
     font-style: normal;
     font-size: 14px;
     font-weight: 500;
@@ -414,27 +513,27 @@ footer .column {
 .socials .facebook {
     height: 24px;
     width: 30px;
-    background-image: url(content/imgs/social-icons.png);
+    background-image: var(--social-icons);
     background-repeat: no-repeat;
 }
 .socials .twitter {
     height: 24px;
     width: 30px;
-    background-image: url(content/imgs/social-icons.png);
+    background-image: var(--social-icons);
     background-position: 0 -71px;
     background-repeat: no-repeat;
 }
 .socials .instagram {
     height: 23px;
     width: 23px;
-    background-image: url(content/imgs/social-icons.png);
+    background-image: var(--social-icons);
     background-position: 0 -24px;
     background-repeat: no-repeat;
 }
 .socials .pintrist {
     height: 24px;
     width: 30px;
-    background-image: url(content/imgs/social-icons.png);
+    background-image: var(--social-icons);
     background-position: 0 -47px;
     background-repeat: no-repeat;
 }
@@ -452,8 +551,8 @@ footer .column {
     line-height: 20px;
     border: none;
     box-shadow: inset 0 0 0 1px #e4e6eb;
-    color: var(--main-text);
-    background-color: #FFF;
+    color: var(--desc-text);
+    background-color: var(--main-color);
     box-sizing: content-box;
 }
 .email form button {
@@ -465,11 +564,12 @@ footer .column {
     cursor: pointer;
     box-sizing: content-box;
     text-transform: uppercase;
-    background-color: #245091;
+    background-color: var(--btn-choose);
     color: #FFF;
 }
 .email form button:hover {
-    background-color: var(--secondary-color);
+    background-color: var(--btn-choose-hover);
+    color:var(--choose-hover-text);
 }
 .email .desc-text {
     font-size: 14px;
@@ -489,7 +589,7 @@ footer .column {
     font-size: 12px;
 }
 .post .desc-text {
-    color: #303236;
+    color: var(--desc-text);
     margin-left: 20px;
     font-size: 14px;
 }
@@ -530,15 +630,18 @@ ul .footer-nav {
     flex-direction: row;
     justify-content: flex-end;
     flex-grow: 1;
+    margin-right: 40px;
 }
 .footer-nav a {
     display: block;
     font-size: 14px;
     text-decoration: none;
     color: #a1bce6;
+    
 }
 .footer-nav a:hover {
     text-decoration: underline;
+    color:var(--a-footer-hover);
 }
 .footer-nav svg, .footer-nav img {
     width: 125px;
@@ -554,10 +657,11 @@ ul .footer-nav {
     padding-left: 36px;
 }
 .legal-disclaimer a {
-    color: #a1bce6;
+    color: var(--a-footer);
     text-decoration: none;
 }
 .legal-disclaimer a:hover {
+    color: var(--a-footer-hover);
     text-decoration: underline;
 }
 .legal-disclaimer div {
@@ -574,6 +678,9 @@ ul .footer-nav {
     }
     #sign-up{
         padding: 0 10px;
+    }
+    .header-bar ul li {
+        padding: 0px 8px;
     }
 }
 
@@ -642,7 +749,7 @@ ul .footer-nav {
         margin: auto;
     }
     .footer-nav a {
-        color: #b1b5bd;
+        color: var(--a-footer);
         font-size: 12px;
     }
     footer ul li {
@@ -652,12 +759,15 @@ ul .footer-nav {
         flex-direction: column;
         text-align: center;
     }
+    .footer-nav.grow {
+        margin: auto;
+    }
     .footer-nav.grow div ul {
         flex-direction: column;
         text-align: center;
     }
     .footer-bottom{
-        color: #d3d5db;
+        color: var(--desc-text);
         margin:0;
         padding: 0;
     }
