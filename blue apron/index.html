@@ -238,15 +238,49 @@
       </footer>
     </div><!-- Main -->
 
-    <script>
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+    <script type="text/babel">
       /**
        * Switches between night and day mode
        */
       let mode = 'day';
       function updateFruits() {
         let html = document.getElementsByTagName("HTML")
+        updateSVG();
         mode = mode == 'day' ? 'night' : 'day';
         html[0].setAttribute("data-theme", mode); 
+      }
+
+      function updateSVG (){
+        var a = document.getElementsByTagName("svg");
+
+        for (i = 0; i < a.length; i++){
+
+          let fill = a[i].innerHTML;
+
+          // D7E5F4 teal blue
+          //9deca1;
+          //E5EEFA
+          // fill = fill.replaceAll('FFF', 'E5EEFA');
+          // fill = fill.replaceAll('E5EEFA', '9deca1'.replaceAll('FFF', 'E5EEFA'));
+          a[i].innerHTML = fill.replaceAll('D7E5F4', '9deca1').replaceAll('E5EEFA', '9deca1')
+                                .replaceAll('FFF', 'E5EEFA').replaceAll('FDFEFF', 'E5EEFA').replaceAll('0F346C', '0de731');
+          // a[i].innerHTML = 'mork';
+          // console.log(fill)
+          // a[i]
+          // a[i].setAttribute("innerHTML", fill); 
+          // ReactDOM.render(<svg fruits={data.data} />, document.querySelector('#pick-fruit'));
+          console.log(a[i])
+        };
+        // Get the SVG document inside the Object tag
+        // var svgDoc = a.contentDocument;
+        // // Get one of the SVG items by ID;
+        // var svgItem = ;
+        // // Set the colour to something else
+        // svgItem.setAttribute("fill", "lime");
       }
 
     </script>

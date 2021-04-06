@@ -19,27 +19,29 @@
 
 
 html{
-    --bg: #fff;
-    --bg-panel: #434343;
-    --bg-img: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/images/image1.jpg");
-    --btn-color: #000;
-    --btn-hover-color: #555;
-    --color-text: #B5B5B5;
-    --color-text-secondary: #333333;
-    --transition-body: all 1000ms !important;
-    --transition-body-delay: 0 !important;
+    --main-color: #FFF;
+    --main-color-light: #fafbfc;
+    --secondary-color: #4c7099;
+    --main-text: #6a6d75;
+    --btn-a: #f26226;
+    --btn-a-hover:  #e7581d;
+    --btn-b: #2e62af;
+    --btn-b-hover:  #0f346c;
+    --a-link: #6a6d75;
+    --a-link-hover: #0f346c;
 }
 
 html[data-theme="night"] {
-    --bg: #333333;
-    --bg-panel: #434343;
-    --bg-img: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/images/image1.jpg");
-    --btn-color: #000;
-    --btn-hover-color: #555;
-    --color-text: #B5B5B5;
-    --color-text-secondary: #333333;
-    --transition-body: all 1000ms !important;
-    --transition-body-delay: 0 !important;
+    --main-color: #4c9950;
+    --main-color-light: #75d179;
+    --secondary-color: #0f6c1f; 
+    --main-text: #cbd4ec;
+    --btn-a: #7e26f2;
+    --btn-a-hover:  #611bbd;
+    --btn-b: #2e62af;
+    --btn-b-hover:  #4c7099;
+    --a-link:#cbd4ec;
+    --a-link-hover: #4c7099;
 }
 
 
@@ -52,7 +54,7 @@ html, body{
     font-size: 14px;
     font-family: 'Cera Pro', sans-serif;
     color: #222;
-    background-color: var(--bg)
+    background-color: var(--main-color)
 }
 #main{
     height: 100%;
@@ -71,7 +73,7 @@ html, body{
     font-size: 18px;
     line-height: 24px;
     font-family: 'Cera Pro Light', sans-serif;
-    color: #6a6d75;
+    color: var(--main-text);
 }
 a{
     cursor: pointer;
@@ -88,7 +90,7 @@ header{
     padding: 10px 20px;
     z-index: 999;
     font-family: 'Cera Pro', sans-serif;
-    background-color: #ffffff;
+    background-color: var(--main-color);
     box-shadow: 0 1px 0 rgba(0,0,0,0.08);
 }
 .header-bar{
@@ -131,11 +133,11 @@ header{
     font-size: 13px;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: #6a6d75;
+    color: var(--main-text);
     outline: none;
 }
 .header-bar a:hover {
-    color: #0f346c;
+    color: var(--secondary-color);
     text-decoration: none;
 }
 #log-in   {
@@ -147,11 +149,11 @@ header{
     text-transform: uppercase;
 }
 #sign-up {
-    background-color: #f26226;
-    border-color: #f26226;
+    background-color: var(--btn-a);
+    border-color: var(--btn-a);
     padding: 0 20px;
     border-radius: 2px;
-    color: #fff;
+    color: var(--main-color);
     -moz-user-select: -moz-none;
     -ms-user-select: none;
     -webkit-user-select: none;
@@ -161,8 +163,8 @@ header{
     text-decoration: none;
 }
 #sign-up:hover {
-    background-color: #e7581d;
-    border-color: #e7581d;
+    background-color: var(--a-link-hover);
+    border-color: var(--a-link-hover);
 }
 
 
@@ -202,14 +204,14 @@ header{
     line-height: 55px;
     letter-spacing: 0.1em;
     text-align: center;
-    background-color: #f26226;
-    border-color: #f26226;
-    color: #fff;
+    background-color: var(--btn-a);
+    border-color: var(--btn-a);
+    color: #FFF;
     text-transform: uppercase;
     }
 .video-text a:hover {
-    background-color: #e7581d;
-    border-color: #e7581d;
+    background-color: var(--a-link-hover);
+    border-color: var(--a-link-hover);
 }
 .video-text h1 {
     max-width: 520px;
@@ -217,7 +219,7 @@ header{
     font-size: 48px;
     line-height: 1.2;
     font-family: 'Cera Pro', sans-serif;
-    color: #ffffff;
+    color: #FFF;
 }
 
 
@@ -278,7 +280,7 @@ header{
     width: 70%;
     margin: auto;
     padding: 30px 15px;
-    background: #fff;
+    background: var(--main-color);
 }
 .section-title {
     margin-bottom: 5px;
@@ -323,11 +325,11 @@ header{
     border-radius: 50px;
     text-transform: uppercase;
     background-color: #2e62af;
-    color: #ffffff;
+    color: #FFF;
 }
 .choose-plan:hover {
     text-decoration: none;
-    background-color: #0f346c;
+    background-color: var(--secondary-color);
 }
 
 /* Last Promo */
@@ -358,7 +360,7 @@ header{
 
 /* Footer top */
 footer {
-    background-color: #fafbfc;
+    background-color: var(--main-color-light);
     box-shadow: inset 0 1px 0 0 #eceef2;
 }
 .footer-top {
@@ -367,7 +369,7 @@ footer {
     justify-content: space-evenly;
     margin: auto;
     padding-top: 30px;
-    color: #6a6d75;
+    color: var(--main-text);
 }
 footer ul li {
     list-style-type: none;
@@ -450,8 +452,8 @@ footer .column {
     line-height: 20px;
     border: none;
     box-shadow: inset 0 0 0 1px #e4e6eb;
-    color: #6a6d75;
-    background-color: #ffffff;
+    color: var(--main-text);
+    background-color: #FFF;
     box-sizing: content-box;
 }
 .email form button {
@@ -464,10 +466,10 @@ footer .column {
     box-sizing: content-box;
     text-transform: uppercase;
     background-color: #245091;
-    color: #fff;
+    color: #FFF;
 }
 .email form button:hover {
-    background-color: #0f346c;
+    background-color: var(--secondary-color);
 }
 .email .desc-text {
     font-size: 14px;
@@ -495,7 +497,7 @@ footer .column {
 /* footer bottom */
 footer .wrapper {
     width: 100%;
-    background-color: #0f346c;
+    background-color: var(--secondary-color);
 }
 .footer-bottom {
     display: flex;
@@ -505,7 +507,7 @@ footer .wrapper {
     margin: 32px auto 0 auto;
     padding: 32px 0;
     line-height: 32px;
-    color: #ffffff;
+    color: #FFF;
 }
 .footer-bottom .row{
     padding: 0;
@@ -559,7 +561,7 @@ ul .footer-nav {
     text-decoration: underline;
 }
 .legal-disclaimer div {
-    color:#fff;
+    color: #FFF;
     font-size: 12px;
     text-align: left;
     align-self:flex-start ;
@@ -661,7 +663,7 @@ ul .footer-nav {
     }
     .legal-disclaimer div{
         text-align: center;
-    color: #6a6d75;
+    color: var(--main-text);
     }
     .legal-disclaimer{
         padding: 0;
@@ -734,7 +736,7 @@ ul .footer-nav {
         background-color: #245091;
     }
     .mobile-started a:hover {
-        background-color: #0f346c;
+        background-color: var(--secondary-color);
     }
     .btn-started {
         display: inline-block;
@@ -746,7 +748,7 @@ ul .footer-nav {
         line-height: 55px;
         text-transform: uppercase;
         text-align: center;
-        color: #fff;
+        color: #FFF;
     }
     .right.svg-wrapper {
         order: 0;
